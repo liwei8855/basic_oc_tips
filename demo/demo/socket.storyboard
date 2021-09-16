@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Socket View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SocketViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhj-pr-qZu">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-CH-ot2">
+                                        <frame key="frameInset" minX="8" minY="10" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QgW-de-Gbz">
+                                        <frame key="frameInset" minX="113" minY="11" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CG-XL-3gQ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="YfF-ti-owO"/>
+                                        </constraints>
+                                        <state key="normal" title="链接"/>
+                                        <connections>
+                                            <action selector="connBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GbF-Nj-dXf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2CG-XL-3gQ" firstAttribute="centerY" secondItem="Qhj-pr-qZu" secondAttribute="centerY" id="MvB-cS-SF5"/>
+                                    <constraint firstAttribute="trailing" secondItem="2CG-XL-3gQ" secondAttribute="trailing" constant="8" id="ORt-0r-aX2"/>
+                                    <constraint firstAttribute="height" constant="49" id="XSR-dT-A5w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-lQ-05Q">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGe-4i-PBT">
+                                        <frame key="frameInset" minX="8" minY="10" width="298" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2F-Ux-3Bp">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="7G8-MW-NfP"/>
+                                        </constraints>
+                                        <state key="normal" title="发送"/>
+                                        <connections>
+                                            <action selector="sedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Mh-yA-R7v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Q2F-Ux-3Bp" secondAttribute="trailing" constant="8" id="ahd-WP-cBW"/>
+                                    <constraint firstItem="Q2F-Ux-3Bp" firstAttribute="centerY" secondItem="Vbz-lQ-05Q" secondAttribute="centerY" id="uwW-l6-XMg"/>
+                                    <constraint firstAttribute="height" constant="49" id="wnY-za-u8n"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUs-AT-F2e">
+                                <frame key="frameInset" minY="205" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qhj-pr-qZu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="Jcb-OP-ZlK"/>
+                            <constraint firstAttribute="trailing" secondItem="Qhj-pr-qZu" secondAttribute="trailing" id="Nf6-q0-2vz"/>
+                            <constraint firstAttribute="trailing" secondItem="Vbz-lQ-05Q" secondAttribute="trailing" id="VQR-cH-BpK"/>
+                            <constraint firstItem="Vbz-lQ-05Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bxS-17-Z9c"/>
+                            <constraint firstItem="Qhj-pr-qZu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fe4-CD-4BV"/>
+                            <constraint firstItem="Vbz-lQ-05Q" firstAttribute="top" secondItem="Qhj-pr-qZu" secondAttribute="bottom" constant="40" id="u29-l9-5qw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hostText" destination="Wf0-CH-ot2" id="ers-Yn-YIR"/>
+                        <outlet property="msgText" destination="GGe-4i-PBT" id="d9o-b7-hRb"/>
+                        <outlet property="portText" destination="QgW-de-Gbz" id="Bq1-Ig-3n1"/>
+                        <outlet property="recLabel" destination="YUs-AT-F2e" id="X5i-9m-wyP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230.5" y="230.5"/>
+        </scene>
+    </scenes>
+</document>
