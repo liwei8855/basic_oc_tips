@@ -19,19 +19,21 @@
 #import "Singleton.h"
 
 @implementation Singleton
-
+//只需执行一次的线程安全代码
 + (instancetype)instance {
-//    static Singleton *instance;
+    static Singleton *instance;//把变量定义在static作用域中保证编译器每次执行方法都复用这个变量不会创建新变量
     static dispatch_once_t onceTocken;
     NSLog(@"long - %ld",onceTocken);
-    
+    //onceTocken == 0时进入 dispatch 不为0不进入dispatch
+    //dispatch结束后 onceTocken==-1；
     dispatch_once(&onceTocken, ^{
-//        instance = [[self alloc] init];
+         
+        instance = [[Singleton alloc] init];
         NSLog(@"只执行一次%@",[NSThread currentThread]);
     });
     
     NSLog(@"come here");
-    return nil;//instance;
+    return instance;
 }
 
 + (void)test {
