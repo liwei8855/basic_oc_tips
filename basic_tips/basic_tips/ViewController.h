@@ -1,9 +1,8 @@
 //
 //  ViewController.h
-//  demo
+//  basic_tips
 //
-//  Created by lw on 17/2/25.
-//  Copyright © 2017年 lee. All rights reserved.
+//  Created by 李威 on 2021/9/23.
 //
 
 #import <UIKit/UIKit.h>

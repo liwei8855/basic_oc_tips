@@ -1,12 +1,11 @@
 //
-//  ViewController.m
-//  demo
+//  OldTestViewController.m
+//  basic_tips
 //
-//  Created by lw on 17/2/25.
-//  Copyright © 2017年 lee. All rights reserved.
+//  Created by 李威 on 2021/9/23.
 //
 
-#import "ViewController.h"
+#import "OldTestViewController.h"
 #import <objc/runtime.h>
 #import "NSString+EOCMyAdditions.h"
 #import "EOCEmployee.h"
@@ -22,17 +21,26 @@ typedef NS_ENUM(NSInteger, demoList) {
     DEMO_EXCEPTION,//抛出异常
 };
 
-@interface ViewController ()
+@interface OldTestViewController ()
 
 @end
 
-@implementation ViewController
+@implementation OldTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self m1];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 #pragma mark -  面试题
 - (void)m1 {
@@ -87,7 +95,6 @@ typedef NS_ENUM(NSInteger, demoList) {
 
 #pragma mark - runtime方法交换
 - (void)methodSwizzling {
-    //方法交换一般只用来调试，项目中应用会导致代码不易懂
     Method original = class_getInstanceMethod([NSString class], @selector(lowercaseString));
     Method swapped = class_getInstanceMethod([NSString class], @selector(eoc_myLowercaseString));
     method_exchangeImplementations(original, swapped);
