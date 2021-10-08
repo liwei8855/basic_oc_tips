@@ -7,6 +7,7 @@
 
 #import "TimerViewController.h"
 #import "Timer1Controller.h"
+#import "GCDTimerController.h"
 
 @interface TimerViewController ()
 
@@ -20,7 +21,12 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    Timer1Controller *vc = [Timer1Controller new];
+//    Timer1Controller *vc = [Timer1Controller new];
+//    [self presentViewController:vc animated:YES completion:^{
+//
+//    }];
+    
+    GCDTimerController *vc = [GCDTimerController new];
     [self presentViewController:vc animated:YES completion:^{
             
     }];
