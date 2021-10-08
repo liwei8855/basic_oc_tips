@@ -5,6 +5,12 @@
 //  Created by lee on 17/3/17.
 //  Copyright © 2017年 lee. All rights reserved.
 //
+/**
+ 队列的类型，决定了任务的执行方式（并发、串行）
+ 1.并发队列
+ 2.串行队列
+ 3.主队列（也是一个串行队列）
+ */
 
 #import "QueueModel.h"
 

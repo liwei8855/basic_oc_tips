@@ -7,10 +7,11 @@
 /*
     同步不开线程，异步开
     （异步）开线程数：串行队列开一条，并发队列n条，条数由GCD决定
+ 
+ // dispatch_sync和dispatch_async用来控制是否要开启新的线程
  */
 
 #import "GCDDemoController.h"
-#import "Singleton.h"
 
 @interface GCDDemoController ()
 
@@ -21,18 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self performSelector:@selector(a)];
     
 }
 
-- (void)a {
-    NSLog(@"%@",[NSThread currentThread]);
- 
-}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-//    [Singleton test];
     [self semaphoreDemo];
+    
 }
 
 #pragma mark - 信号量dispatch_semaphore_t，使用信号量来同步数据
