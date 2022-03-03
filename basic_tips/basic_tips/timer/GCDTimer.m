@@ -40,6 +40,9 @@ dispatch_semaphore_t semaphore_;
             [self cancelTask:name];
         }
     });
+    dispatch_source_set_cancel_handler(timer, ^{
+        //取消dispatch source时的处理
+    });
     dispatch_resume(timer);
     return name;
     

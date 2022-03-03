@@ -30,6 +30,24 @@
     
 }
 
+#pragma mark - 创建一个想要的服务质量信息的调度队列
+/*指定服务质量（QOS）级别
+ 通过这个函数指定了这个QOS的值，这个值要优先于从调度队列目标队列中继承的优先级
+ 全局队列的优先级与QOS的等级映射关系如下：
+ DISPATCH_QUEUE_PRIORITY_HIGH  <===>  QOS_CLASS_USER_INITIATED
+ DISPATCH_QUEUE_PRIORITY_DEFAULT    <===> QOS_CLASS_UTILITY
+ DISPATCH_QUEUE_PRIORITY_LOW  <===> QOS_CLASS_UTILITY
+ DISPATCH_QUEUE_PRIORITY_BACKGROUND  <===>  QOS_CLASS_BACKGROUND
+ attr，一个结合了服务质量级别的队列属性值。指定attr为DISPATCH_QUEUE_SERIAL让这些提交的任务一个一个的运行，或者指定为DISPATCH_QUEUE_CONCURRENT让这些任务同时运行。如果你指定为NULL，则这个函数创建一个串行队列
+ qos_class，你想要在这个队列中执行任务的服务质量（QOS）。QOS帮助我们确定这个队列中的任务执行优先级。可以指定QOS_CLASS_USER_INTERACTIVE，QOS_CLASS_USER_INITIATED，QOS_CLASS_UTILITY或QOS_CLASS_BACKGROUND中的一个。操作user-interactiver或user-initiated任务的队列要比其他一般在后台运行的任务队列有更高的优先级
+ relative_priority，一个在QOS等级内的相对优先级。这个值是一个支持给定QOS调度优先级最大值的负偏差，。这个值必须大于0并且要小于QOS_MIN_RELATIVE_PRIORITY。
+ */
+- (void)demo13 {
+    dispatch_queue_attr_t attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_USER_INITIATED, 0);
+    dispatch_queue_t queue = dispatch_queue_create("com.xxx.xxx", attr);
+}
+
+
 #pragma mark - 信号量dispatch_semaphore_t，使用信号量来同步数据
 /*
  当一个信号量被信号通知，其计数会被增加。当一个线程在一个信号量上等待时，
