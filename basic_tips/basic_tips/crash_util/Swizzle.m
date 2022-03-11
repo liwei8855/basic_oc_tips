@@ -11,7 +11,6 @@
 @implementation NSObject (Swizzle)
 
 + (void)swizzleMethod:(SEL)method newMethod:(SEL)newMethod isClassMethod:(BOOL)classType {
-    
     Class class = objc_getClass(NSStringFromClass([self class]).UTF8String);
     if (classType) {
         class = objc_getMetaClass(NSStringFromClass([self class]).UTF8String);
