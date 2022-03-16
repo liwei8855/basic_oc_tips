@@ -7,11 +7,8 @@
 
 #import "NotificationDemoController.h"
 
-<<<<<<< HEAD
 NSString *const NOTIFICATION_NAME = @"NOTIFICATION_NAME";
 
-=======
->>>>>>> crash_util
 @interface NotificationDemoController ()
 
 @end
@@ -20,7 +17,6 @@ NSString *const NOTIFICATION_NAME = @"NOTIFICATION_NAME";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     
     //object：指定接受某个对象的通知，为nil表示可以接受任意对象的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotifi:) name:NOTIFICATION_NAME object:nil];
@@ -86,19 +82,5 @@ NSString *const NOTIFICATION_NAME = @"NOTIFICATION_NAME";
 - (void)handleNotifi:(NSNotification*)notif{
     NSLog(@"接收到通知了:%@",[NSThread currentThread]);
 }
-=======
-    // Do any additional setup after loading the view.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
->>>>>>> crash_util
 
 @end

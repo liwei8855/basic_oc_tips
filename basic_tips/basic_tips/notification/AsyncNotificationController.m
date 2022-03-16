@@ -3,7 +3,6 @@
 //  basic_tips
 //
 //  Created by 李威 on 2022/3/16.
-<<<<<<< HEAD
 /*
  跨线程接受通知
  
@@ -15,21 +14,12 @@
 
 @interface AsyncNotificationController ()<NSPortDelegate>
 @property (nonatomic, strong) NSPort *port;
-=======
-//
-
-#import "AsyncNotificationController.h"
-
-@interface AsyncNotificationController ()
-
->>>>>>> crash_util
 @end
 
 @implementation AsyncNotificationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     
     _port = [[NSPort alloc]init];
     _port.delegate = self;//消息处理通过代理来处理
@@ -54,19 +44,5 @@
     NSObject * messageObj = (NSObject*)message;
     NSLog(@"=%@",[messageObj valueForKey:@"msgid"]);
 }
-=======
-    // Do any additional setup after loading the view.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
->>>>>>> crash_util
 @end

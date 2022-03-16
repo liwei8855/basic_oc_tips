@@ -1,15 +1,9 @@
 //
-<<<<<<< HEAD
 //  JailUtil.m
-=======
-//  JailController.m
->>>>>>> crash_util
-//  basic_tips
 //
 //  Created by 李威 on 2022/3/12.
 //
 
-<<<<<<< HEAD
 #import "JailUtil.h"
 
 @implementation JailUtil
@@ -31,10 +25,5 @@
     ///还有其他判断条件 google一下
     return NO;
 }
-=======
-#import "JailController.h"
-
-@implementation JailController
->>>>>>> crash_util
 
 @end
