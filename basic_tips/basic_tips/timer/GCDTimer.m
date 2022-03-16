@@ -29,10 +29,10 @@ dispatch_semaphore_t semaphore_;
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(timer, start*NSEC_PER_SEC, interval * NSEC_PER_SEC, 0);
     
-    dispatch_semaphore_wait(semaphore_, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(semaphore_, DISPATCH_TIME_FOREVER);//加锁 同步操作dict，防止并发数据错误
     NSString *name = [NSString stringWithFormat:@"%zd",timers_.count];
     timers_[name] = timer;
-    dispatch_semaphore_signal(semaphore_);
+    dispatch_semaphore_signal(semaphore_);//解锁
     
     dispatch_source_set_event_handler(timer, ^{
         task();

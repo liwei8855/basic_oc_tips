@@ -36,7 +36,7 @@
 }
 - (void)setup {
 //一、block形式
-    //block形式不会产生寻欢引用，因为block没有被持有
+    //block形式不会产生循环引用，因为block没有被持有
     //不用self.timer持有timer，timer也不会释放，只有持有timer后invalidate才能正常释放
 //    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
 //        NSLog(@"aaaaa");
