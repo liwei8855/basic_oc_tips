@@ -18,7 +18,7 @@
 
 @implementation NSObject (GuardKVC)
 + (void)load {
-    dispatch_once_t token;
+    static dispatch_once_t token;
     dispatch_once(&token, ^{
         [self switchMethod];
     });
@@ -27,10 +27,10 @@
 + (void)switchMethod {
     SEL method1 = @selector(setValue:forKey:);
     SEL method2 = @selector(valueForKey:);
-    
+
     SEL newMethod1 = @selector(safe_setValue:forKey:);
     SEL newMethod2 = @selector(safe_valueForKey:);
-    
+
     [NSObject swizzleMethod:method1 newMethod:newMethod1 isClassMethod:NO];
     [NSObject swizzleMethod:method2 newMethod:newMethod2 isClassMethod:NO];
 }

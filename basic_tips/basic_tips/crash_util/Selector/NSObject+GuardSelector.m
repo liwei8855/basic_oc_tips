@@ -11,7 +11,7 @@
 
 @implementation NSObject (GuardSelector)
 + (void)load {
-    dispatch_once_t token;
+    static dispatch_once_t token;
     dispatch_once(&token, ^{
         [self switchMethod];
     });
