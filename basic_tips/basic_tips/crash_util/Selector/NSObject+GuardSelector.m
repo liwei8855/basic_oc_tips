@@ -128,19 +128,19 @@ static int Crash(id slf, SEL selector) {
     return 0;
 }
 //消息常规转发拦截
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [NSMethodSignature signatureWithObjCTypes:"@"];//返回值为void的NSMethodSignature
-}
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    NSLog(@"forwardInvocation------");
-}
-
-+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    return [NSMethodSignature signatureWithObjCTypes:"@"];
-}
-+ (void)forwardInvocation:(NSInvocation *)anInvocation {
-    NSLog(@"forwardInvocation------");
-}
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    return [NSMethodSignature signatureWithObjCTypes:"@"];//返回值为void的NSMethodSignature
+//}
+//- (void)forwardInvocation:(NSInvocation *)anInvocation {
+//    NSLog(@"forwardInvocation------");
+//}
+//
+//+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    return [NSMethodSignature signatureWithObjCTypes:"@"];
+//}
+//+ (void)forwardInvocation:(NSInvocation *)anInvocation {
+//    NSLog(@"forwardInvocation------");
+//}
 
 #pragma mark - perform selector
 - (id)safe_performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2 {
