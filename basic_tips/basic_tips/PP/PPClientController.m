@@ -8,6 +8,7 @@
 #import "PPClientController.h"
 #import "Socket/GCDAsyncSocket.h"
 #import "SocketClient.h"
+#import "DrawView.h"
 
 @interface PPClientController ()<GCDAsyncSocketDelegate,UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *ipTextField;
@@ -22,10 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGRect rect = CGRectMake(50, 50, 300, 40);
+    DrawView *dv = [[DrawView alloc]initWithFrame:rect];
+    [self.view addSubview:dv];
+    self.ipTextField.hidden = YES;
+    self.showTextView.hidden = YES;
+    
+//    [self setupPP];
+}
 
+- (void)setupPP {
     [self initServer];
     [self initClient];
-    
+
     self.ipTextField.delegate = self;
     self.ipTextField.text = @"10.7.7.42";
     self.showTextView.delegate = self;
